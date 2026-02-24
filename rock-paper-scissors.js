@@ -2,7 +2,6 @@ console.log("Hello World");
 
 function getComputerChoice() {
     let choice = Math.random();
-    console.log(choice);
     if (choice * 100 <= 33) {
         return "rock";
     } else if (choice * 100 <= 66) {
@@ -17,8 +16,6 @@ function getHumanChoice() {
 }
 
 let humanScore = 0 , computerScore = 0;
-console.log(humanScore);
-console.log(computerScore);
 
 function playRound(humanChoice,computerChoice) {
     let insensHumanChoice = humanChoice.toLowerCase();
@@ -56,6 +53,15 @@ function playRound(humanChoice,computerChoice) {
         }
     }
 }
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-playRound(humanSelection,computerSelection);
+
+function playGame() {
+    for (let i=0;i<=4;i++){
+        let humanPick = getHumanChoice();
+        let computerPick = getComputerChoice();
+        playRound(humanPick,computerPick)
+    }
+    console.log(humanScore);
+    console.log(computerScore);
+}
+
+playGame();
