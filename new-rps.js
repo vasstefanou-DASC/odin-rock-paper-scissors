@@ -43,6 +43,11 @@ function playRound (human,computer) {
     } else {
         console.log("It's a Draw");
     }
+<<<<<<< HEAD
+=======
+    humanResults.textContent= "Human Score: " + humanScore;
+    computerResults.textContent = "Computer Score: " + computerScore;
+>>>>>>> rps-ui
 }
 
 function playGame(rounds) {
@@ -62,4 +67,59 @@ function playGame(rounds) {
     }
 }
 
+<<<<<<< HEAD
 playGame(5);
+=======
+// playGame(5);
+
+const ui = document.createElement("div");
+ui.textContent = "Press the button according to your choice";
+
+const rock = document.createElement("button");
+const paper = document.createElement("button");
+const scissors = document.createElement("button");
+rock.textContent = "Rock";
+paper.textContent = "Paper";
+scissors.textContent = "Scissors";
+ui.appendChild(rock);
+ui.appendChild(scissors);
+ui.appendChild(paper);
+
+document.body.appendChild(ui);
+
+rock.addEventListener("click", (event) => { 
+    playRound({value:0,choice:"rock"},getComputerChoice())
+    checkWinner();
+});
+paper.addEventListener("click", (event) => {
+    playRound({value:2,choice:"paper"},getComputerChoice())
+    checkWinner();
+});
+scissors.addEventListener("click", (event) => {
+    playRound({value:1,choice:"scissors"},getComputerChoice())
+    checkWinner();
+});
+
+const resultsPanel = document.createElement("div");
+const humanResults = document.createElement("p");
+const computerResults = document.createElement("p");
+const winnerResults = document.createElement("p");
+resultsPanel.appendChild(humanResults);
+resultsPanel.appendChild(computerResults);
+resultsPanel.appendChild(winnerResults);
+document.body.appendChild(resultsPanel);
+
+function checkWinner () {
+    if (humanScore === 5) {
+        winnerResults.textContent = "You Win";
+        humanScore = 0;
+        computerScore = 0;
+    } else if (computerScore === 5) {
+        winnerResults.textContent = "Computer Wins";
+        humanScore = 0;
+        computerScore = 0;
+    } else {
+        winnerResults.textContent = "No winner yet";
+    }
+}
+>>>>>>> rps-ui
