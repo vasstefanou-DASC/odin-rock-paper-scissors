@@ -30,17 +30,36 @@ function getHumanChoice() {
     return {value: humanValue,choice: humanChoice};
 }
 
-const humanScore = 0;
-const computerScore = 0;
+let humanScore = 0;
+let computerScore = 0;
 
 function playRound (human,computer) {
     if (human.value-computer.value === -1 || human.value-computer.value === 2) {
         console.log("You win " + human.choice + " beats " + computer.choice);
+        humanScore++;
     } else if (human.value-computer.value === -2 || human.value-computer.value === 1) {
         console.log("You lose " + human.choice + " loses to " + computer.choice)
+        computerScore++;
     } else {
         console.log("It's a Draw");
     }
 }
 
-playRound(getHumanChoice(),getComputerChoice());
+function playGame(rounds) {
+    let round = 1;
+    while (round<=rounds) {
+        playRound(getHumanChoice(),getComputerChoice());
+        console.log("Human Score: " + humanScore);
+        console.log("Computer Score: " + computerScore);
+        round++;
+    }
+    if (humanScore > computerScore) {
+        console.log("You win");
+    } else if (humanScore < computerScore) {
+        console.log("You lose");
+    } else {
+        console.log("It's a Draw!")
+    }
+}
+
+playGame(5);
