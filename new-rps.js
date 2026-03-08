@@ -43,11 +43,8 @@ function playRound (human,computer) {
     } else {
         console.log("It's a Draw");
     }
-<<<<<<< HEAD
-=======
     humanResults.textContent= "Human Score: " + humanScore;
     computerResults.textContent = "Computer Score: " + computerScore;
->>>>>>> rps-ui
 }
 
 function playGame(rounds) {
@@ -67,9 +64,6 @@ function playGame(rounds) {
     }
 }
 
-<<<<<<< HEAD
-playGame(5);
-=======
 // playGame(5);
 
 const ui = document.createElement("div");
@@ -122,4 +116,3 @@ function checkWinner () {
         winnerResults.textContent = "No winner yet";
     }
 }
->>>>>>> rps-ui
